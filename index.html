@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ayaz & Co. | Tax Consultant</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+/* =========================================================
+                    ROOT COLORS
+========================================================= */
+
+:root{
+
+    --bg:#f4faff;
+    --white:#ffffff;
+
+    --black:#050816;
+    --dark:#0b1120;
+    --dark2:#111827;
+
+    --sky:#38bdf8;
+    --sky-light:#7dd3fc;
+    --sky-glow:#0ea5e9;
+
+    --text:#dbeafe;
+    --muted:#94a3b8;
+
+    --glass:rgba(255,255,255,0.08);
+    --border:rgba(56,189,248,0.18);
+
+}
+
+/* =========================================================
+                    GLOBAL
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:
+    radial-gradient(circle at top left,rgba(56,189,248,0.12),transparent 30%),
+    radial-gradient(circle at bottom right,rgba(14,165,233,0.12),transparent 30%),
+    linear-gradient(135deg,#020617,#0f172a,#111827);
+
+    color:white;
+
+    overflow-x:hidden;
+}
+
+/* =========================================================
+                    CUSTOM SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#020617;
+}
+
+::-webkit-scrollbar-thumb{
+    background:linear-gradient(var(--sky),var(--sky-light));
+    border-radius:20px;
+}
+
+/* =========================================================
+                    NAVBAR
+========================================================= */
+
+nav{
+
+    position:fixed;
+    top:0;
+    width:100%;
+
+    z-index:1000;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 8%;
+
+    background:rgba(2,6,23,0.7);
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(56,189,248,0.15);
+
+    box-shadow:0 0 30px rgba(14,165,233,0.08);
+
+}
+
+/* =========================================================
+                    LOGO
+========================================================= */
+
+.logo-container{
+    display:flex;
+    align-items:center;
+    gap:16px;
+}
+
+.logo-container img{
+
+    width:72px;
+    height:72px;
+
+    object-fit:contain;
+
+    border-radius:16px;
+
+    border:1px solid rgba(56,189,248,0.25);
+
+    box-shadow:
+    0 0 25px rgba(56,189,248,0.18),
+    0 0 60px rgba(14,165,233,0.08);
+
+    transition:0.45s;
+}
+
+.logo-container img:hover{
+
+    transform:scale(1.1) rotate(-3deg);
+
+    box-shadow:
+    0 0 35px rgba(56,189,248,0.45),
+    0 0 80px rgba(14,165,233,0.35);
+
+}
+
+.logo-text{
+    display:flex;
+    flex-direction:column;
+
+    font-size:28px;
+    font-weight:800;
+
+    color:white;
+}
+
+.logo-text span{
+    font-size:12px;
+    letter-spacing:2px;
+
+    color:var(--sky-light);
+}
+
+/* =========================================================
+                    NAV LINKS
+========================================================= */
+
+nav ul{
+    display:flex;
+    gap:18px;
+    list-style:none;
+}
+
+nav ul li a{
+
+    text-decoration:none;
+
+    color:#e2e8f0;
+
+    padding:12px 22px;
+
+    border-radius:40px;
+
+    transition:0.35s;
+
+    font-weight:500;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+nav ul li a::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:0%;
+    height:100%;
+
+    left:0;
+    top:0;
+
+    background:linear-gradient(135deg,var(--sky),var(--sky-light));
+
+    z-index:-1;
+
+    transition:0.4s;
+}
+
+nav ul li a:hover::before{
+    width:100%;
+}
+
+nav ul li a:hover{
+
+    color:#03111d;
+
+    transform:translateY(-3px);
+
+    box-shadow:
+    0 0 20px rgba(56,189,248,0.45),
+    0 0 50px rgba(14,165,233,0.22);
+
+}
+
+/* =========================================================
+                    HERO SECTION
+========================================================= */
+
+.hero{
+
+    min-height:100vh;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    gap:70px;
+
+    padding:150px 8% 100px;
+
+    position:relative;
+}
+
+.hero::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:radial-gradient(circle,rgba(56,189,248,0.18),transparent 70%);
+
+    top:-100px;
+    right:-120px;
+
+    filter:blur(30px);
+
+    z-index:-1;
+}
+
+.hero::after{
+
+    content:'';
+
+    position:absolute;
+
+    width:450px;
+    height:450px;
+
+    background:radial-gradient(circle,rgba(14,165,233,0.14),transparent 70%);
+
+    bottom:-120px;
+    left:-120px;
+
+    filter:blur(35px);
+
+    z-index:-1;
+}
+
+/* =========================================================
+                    HERO TEXT
+========================================================= */
+
+.hero-text{
+    flex:1;
+}
+
+.hero-text h1{
+
+    font-size:72px;
+
+    line-height:1.05;
+
+    margin-bottom:28px;
+
+    font-weight:800;
+
+    background:linear-gradient(to right,#ffffff,#7dd3fc);
+
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+.hero-text p{
+
+    font-size:18px;
+
+    line-height:1.9;
+
+    color:var(--muted);
+
+    max-width:650px;
+
+    margin-bottom:40px;
+}
+
+/* =========================================================
+                    BUTTONS
+========================================================= */
+
+.hero-buttons{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+}
+
+.btn{
+
+    padding:16px 32px;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    font-size:15px;
+    font-weight:700;
+
+    transition:0.4s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* primary */
+
+.primary{
+
+    background:linear-gradient(135deg,var(--sky),var(--sky-light));
+
+    color:#03111d;
+
+    box-shadow:
+    0 0 25px rgba(56,189,248,0.35),
+    0 0 60px rgba(14,165,233,0.15);
+
+}
+
+.primary:hover{
+
+    transform:translateY(-6px) scale(1.03);
+
+    box-shadow:
+    0 0 35px rgba(56,189,248,0.65),
+    0 0 80px rgba(14,165,233,0.35);
+
+}
+
+/* secondary */
+
+.secondary{
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(56,189,248,0.2);
+
+    color:white;
+
+    backdrop-filter:blur(10px);
+}
+
+.secondary:hover{
+
+    background:rgba(56,189,248,0.12);
+
+    transform:translateY(-5px);
+
+    box-shadow:
+    0 0 25px rgba(56,189,248,0.25);
+
+}
+
+/* =========================================================
+                    HERO IMAGE
+========================================================= */
+
+.hero-img img{
+
+    width:560px;
+    max-width:100%;
+
+    border-radius:32px;
+
+    border:1px solid rgba(56,189,248,0.2);
+
+    box-shadow:
+    0 20px 60px rgba(0,0,0,0.45),
+    0 0 40px rgba(56,189,248,0.18);
+
+    transition:0.5s;
+}
+
+.hero-img img:hover{
+
+    transform:translateY(-12px) scale(1.03);
+
+    box-shadow:
+    0 30px 80px rgba(0,0,0,0.55),
+    0 0 60px rgba(56,189,248,0.35);
+
+}
+
+/* =========================================================
+                    SECTION
+========================================================= */
+
+.section{
+    padding:110px 8%;
+}
+
+.title{
+
+    text-align:center;
+
+    font-size:50px;
+
+    margin-bottom:70px;
+
+    font-weight:800;
+
+    color:white;
+
+    position:relative;
+}
+
+.title::after{
+
+    content:'';
+
+    width:100px;
+    height:4px;
+
+    background:linear-gradient(to right,var(--sky),transparent);
+
+    position:absolute;
+
+    bottom:-18px;
+    left:50%;
+
+    transform:translateX(-50%);
+
+    border-radius:20px;
+}
+
+/* =========================================================
+                    GRID
+========================================================= */
+
+.grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+
+    gap:30px;
+}
+
+/* =========================================================
+                    CARDS
+========================================================= */
+
+.card{
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(14px);
+
+    border:1px solid rgba(56,189,248,0.14);
+
+    border-radius:28px;
+
+    padding:36px;
+
+    transition:0.45s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+.card::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:150px;
+    height:150px;
+
+    background:rgba(56,189,248,0.08);
+
+    border-radius:50%;
+
+    top:-50px;
+    right:-50px;
+
+    transition:0.5s;
+}
+
+.card:hover::before{
+
+    transform:scale(1.8);
+}
+
+.card:hover{
+
+    transform:translateY(-12px);
+
+    border-color:rgba(56,189,248,0.45);
+
+    box-shadow:
+    0 0 35px rgba(56,189,248,0.2),
+    0 20px 40px rgba(0,0,0,0.3);
+
+}
+
+.card h3{
+
+    color:white;
+
+    margin-bottom:16px;
+
+    font-size:24px;
+}
+
+.card p{
+
+    color:var(--muted);
+
+    line-height:1.9;
+}
+
+/* =========================================================
+                    SERVICE BOX
+========================================================= */
+
+.service-box{
+
+    text-align:center;
+
+    padding:80px;
+
+    background:rgba(255,255,255,0.05);
+
+    backdrop-filter:blur(16px);
+
+    border-radius:35px;
+
+    border:1px solid rgba(56,189,248,0.12);
+
+    box-shadow:
+    0 0 40px rgba(56,189,248,0.08);
+
+    transition:0.45s;
+}
+
+.service-box:hover{
+
+    transform:translateY(-10px);
+
+    box-shadow:
+    0 0 60px rgba(56,189,248,0.18);
+}
+
+.service-box h3{
+
+    font-size:30px;
+
+    color:white;
+
+    line-height:1.8;
+}
+
+.service-box p{
+
+    color:var(--muted);
+
+    margin:20px 0 35px;
+}
+
+/* =========================================================
+                    FLOW
+========================================================= */
+
+.flow{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+}
+
+.flow-step{
+
+    background:rgba(255,255,255,0.05);
+
+    border:1px solid rgba(56,189,248,0.14);
+
+    padding:22px 28px;
+
+    border-radius:20px;
+
+    color:white;
+
+    font-weight:600;
+
+    transition:0.4s;
+}
+
+.flow-step:hover{
+
+    transform:translateY(-6px);
+
+    background:rgba(56,189,248,0.08);
+
+    box-shadow:
+    0 0 30px rgba(56,189,248,0.2);
+
+}
+
+.flow-arrow{
+
+    font-size:24px;
+
+    color:var(--sky);
+}
+
+/* =========================================================
+                    HELP
+========================================================= */
+
+.help{
+
+    text-align:center;
+
+    padding:90px;
+
+    border-radius:40px;
+
+    background:
+    linear-gradient(135deg,
+    rgba(56,189,248,0.08),
+    rgba(255,255,255,0.03));
+
+    border:1px solid rgba(56,189,248,0.12);
+
+    backdrop-filter:blur(16px);
+
+    box-shadow:
+    0 0 40px rgba(56,189,248,0.08);
+}
+
+.help p{
+
+    color:var(--muted);
+
+    margin:20px 0 35px;
+}
+
+/* =========================================================
+                    FOOTER
+========================================================= */
+
+footer{
+
+    background:#020617;
+
+    padding:80px 20px;
+
+    text-align:center;
+
+    border-top:1px solid rgba(56,189,248,0.12);
+}
+
+footer h2{
+
+    color:white;
+
+    margin-bottom:15px;
+
+    font-size:34px;
+}
+
+footer p{
+
+    color:var(--muted);
+
+    line-height:2;
+}
+
+/* =========================================================
+                    RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+    nav{
+        flex-direction:column;
+        gap:18px;
+        padding:15px 5%;
+    }
+
+    .hero{
+        flex-direction:column;
+        text-align:center;
+        gap:40px;
+        padding:170px 5% 70px;
+    }
+
+    .hero-text h1{
+        font-size:52px;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    nav{
+        padding:12px 4%;
+    }
+
+    .logo-container{
+        gap:10px;
+    }
+
+    .logo-container img{
+        width:55px;
+        height:55px;
+    }
+
+    .logo-text{
+        font-size:22px;
+    }
+
+    .logo-text span{
+        font-size:10px;
+        letter-spacing:1px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+        gap:8px;
+    }
+
+    nav ul li a{
+        padding:8px 14px;
+        font-size:13px;
+    }
+
+    .hero{
+        padding:150px 5% 60px;
+        gap:35px;
+    }
+
+    .hero-text h1{
+        font-size:38px;
+        line-height:1.2;
+    }
+
+    .hero-text p{
+        font-size:15px;
+        line-height:1.7;
+        margin:auto;
+        margin-bottom:30px;
+    }
+
+    .hero-img img{
+        width:100%;
+        max-width:420px;
+    }
+
+    .title{
+        font-size:34px;
+        margin-bottom:50px;
+    }
+
+    .section{
+        padding:80px 5%;
+    }
+
+    .card{
+        padding:28px;
+    }
+
+    .card h3{
+        font-size:21px;
+    }
+
+    .service-box{
+        padding:45px 25px;
+    }
+
+    .service-box h3{
+        font-size:24px;
+        line-height:1.6;
+    }
+
+    .help{
+        padding:50px 25px;
+    }
+
+    .flow{
+        flex-direction:column;
+    }
+
+    .flow-arrow{
+        transform:rotate(90deg);
+    }
+
+    .btn{
+        width:100%;
+        max-width:280px;
+    }
+
+}
+
+@media (max-width: 480px) {
+
+    .hero-text h1{
+        font-size:30px;
+    }
+
+    .hero-text p{
+        font-size:14px;
+    }
+
+    .title{
+        font-size:28px;
+    }
+
+    .service-box h3{
+        font-size:20px;
+    }
+
+    footer h2{
+        font-size:28px;
+    }
+
+}
+
+img{
+    max-width:100%;
+    height:auto;
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo-container">
+
+<img src="Logo.png" alt="Logo">
+
+<div class="logo-text">
+Ayaz & Co.
+<span>TAX CONSULTANT</span>
+</div>
+
+</div>
+
+<ul>
+<li><a href="services.html">Services</a></li>
+<li><a href="appointment.html">Appointment</a></li>
+<li><a href="help.html">Help</a></li>
+</ul>
+
+</nav>
+
+<section class="hero">
+
+<div class="hero-text">
+
+<h1>
+Modern Tax & Financial Solutions
+</h1>
+
+<p>
+Professional consultancy services for GST, ITR, MSME,
+Company Registration, Accounting, Audit Support and
+business financial management with trusted expertise.
+</p>
+
+<div class="hero-buttons">
+
+<button class="btn primary"
+onclick="location.href='appointment.html'">
+Book Appointment
+</button>
+
+<button class="btn secondary"
+onclick="location.href='services.html'">
+Explore Services
+</button>
+
+</div>
+
+</div>
+
+<div class="hero-img">
+<img src="heroimage.jpeg" alt="GST Services">
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="title">Why Choose Us</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Expert Professionals</h3>
+<p>
+Highly experienced consultants managing your financial
+and taxation matters with precision and care.
+</p>
+</div>
+
+<div class="card">
+<h3>Fast Processing</h3>
+<p>
+Quick GST registration, ITR filing and business setup
+with minimal delays and complete support.
+</p>
+</div>
+
+<div class="card">
+<h3>Trusted Services</h3>
+<p>
+Transparent communication, reliable solutions and
+accurate documentation for every client.
+</p>
+</div>
+
+<div class="card">
+<h3>Affordable Pricing</h3>
+<p>
+Premium consultancy services at fair and competitive
+pricing for individuals and businesses.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="title">Our Services</h2>
+
+<div class="service-box">
+
+<h3>
+GST • ITR • MSME • Company Registration • Accounting • Audit Support
+</h3>
+
+<p>
+Click below to explore our complete services and solutions
+</p>
+
+<button class="btn primary"
+onclick="location.href='services.html'">
+View Services
+</button>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2 class="title">Book Appointment</h2>
+
+<div class="flow">
+
+<div class="flow-step">Enter Details</div>
+
+<div class="flow-arrow">➜</div>
+
+<div class="flow-step">Choose Service</div>
+
+<div class="flow-arrow">➜</div>
+
+<div class="flow-step">Select Date</div>
+
+<div class="flow-arrow">➜</div>
+
+<div class="flow-step">Verify Captcha</div>
+
+<div class="flow-arrow">➜</div>
+
+<div class="flow-step">Submit Request</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="help">
+
+<h2 class="title">Need Help?</h2>
+
+<p>
+Get instant assistance for GST, ITR, Registration,
+Accounting and Financial Consultancy queries.
+</p>
+
+<button class="btn primary"
+onclick="location.href='help.html'">
+Go To Help Page
+</button>
+
+</div>
+
+</section>
+
+<footer>
+
+<h2>Ayaz & Co.</h2>
+
+<p>
+Tax Consultant | Financial Advisory | Business Solutions
+</p>
+
+<br>
+
+<p>
+📞 9824517470 <br>
+📧 ayazsyd@gmail.com
+</p>
+
+<br>
+
+<p>
+“Your Trust, Our Responsibility”
+</p>
+
+</footer>
+
+</body>
+</html>
